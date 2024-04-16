@@ -12,24 +12,23 @@
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-  int i;
-  i = 0;
-  while (n > 0)
-  {
-    (const char *)s[i] = '\0';
-    i++;
-    n--;
-  }
-  return s;
+	int	i;
+
+	i = 0;
+	while (n > 0)
+	{
+		(const char *)s[i] = '\0';
+		i++;
+		n--;
+	}
+	return (s);
 }
 
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-  char 
-  result_str = 
-  return (0);
+	char result_str = return (0);
 }
