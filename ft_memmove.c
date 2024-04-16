@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 23:27:59 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 02:48:20 by stakada          ###   ########.fr       */
+/*   Created: 2024/04/17 02:48:59 by stakada           #+#    #+#             */
+/*   Updated: 2024/04/17 02:49:12 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
-	i = 0;
-	unsigned char *p_dst = (unsigned char *)dst;
-	const unsigned char *p_src = (const unsigned char *)src;
-
-	while (i < n)
-	{
-		*p_dst = *p_src;
-		p_dst++;
-		p_src++;
-		i++;
-	}
-	return (dst);
 }
