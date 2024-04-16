@@ -1,7 +1,7 @@
 # must: $(NAME), all, clean, fclean, re
 # bonus?
 
-NAME =
+NAME = libft-00
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
