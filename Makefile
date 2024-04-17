@@ -1,9 +1,7 @@
-NAME = libft
+NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
-# SRCS = $(wildcard *.c)
 
 SRCS =	ft_strlen.c \
 	ft_strlcpy.c \
@@ -26,7 +24,7 @@ SRCS =	ft_strlen.c \
 	ft_isprint.c \
 	ft_toupper.c \
 	ft_tolower.c \
-	ft_calloc.c \
+	# ft_calloc.c \
 	ft_strdup.c \
 	ft_substr.c \
 	ft_strjoin.c \
@@ -45,10 +43,10 @@ INCLUDES = ./libft.h
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -I $(INCLUDES) $(OBJS) -o $@
+	ar rcs $@ $^
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
