@@ -6,16 +6,11 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:20:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 20:56:12 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/18 00:29:53 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// int ft_atoi(const char *str)
-// {
-  
-// }
 
 int	ft_atoi(const char *str)
 {

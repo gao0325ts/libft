@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 03:52:25 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 03:54:30 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/18 00:21:31 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
+
 	i = 0;
 	while (i < n)
 	{

@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 03:55:34 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 23:12:02 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/18 00:27:55 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
+	size_t		i;
+	const char	*str;
+
 	i = 0;
-	const char *str = (const char *)s;
+	str = (const char *)s;
 	while (i < n)
 	{
 		while (*str)
@@ -26,6 +28,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			str++;
 		}
 		i++;
-  }
+	}
 	return (NULL);
 }
