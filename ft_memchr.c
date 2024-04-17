@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 03:55:34 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 03:58:57 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/17 04:37:03 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		while (*str)
 		{
 			if (*str == (unsigned char)c)
-				return (str);
+				return ((void *)str);
 			str++;
 		}
+  }
 		return (NULL);
-	}
 }

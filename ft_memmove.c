@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 02:48:59 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 02:49:12 by stakada          ###   ########.fr       */
+/*   Created: 2024/04/17 04:38:37 by stakada           #+#    #+#             */
+/*   Updated: 2024/04/17 19:43:05 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
+  
 }
