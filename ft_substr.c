@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 03:52:25 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 03:39:06 by stakada          ###   ########.fr       */
+/*   Created: 2024/04/18 02:05:28 by stakada           #+#    #+#             */
+/*   Updated: 2024/04/18 03:00:19 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (*s1 == '\0' || *s2 == '\0')
-			return (0);
-		s1++;
-		s2++;
-		i++;
-	}
-	return (0);
+  size_t s_len;
+  char *result;
+  s_len = ft_strlen(&s[start]);
+  result = (char *)malloc(sizeof(char) * len + 1);
+  if (result == NULL)
+    return (NULL);
+  while (len > 0)
+  {
+    *result++ = s[start++];
+    len--;
+  }
+  return (result);
 }

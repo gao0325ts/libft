@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_spllit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 03:52:25 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 03:39:06 by stakada          ###   ########.fr       */
+/*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
+/*   Updated: 2024/04/18 03:00:03 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char **ft_split(char const *s, char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		if (*s1 == '\0' || *s2 == '\0')
-			return (0);
-		s1++;
-		s2++;
-		i++;
-	}
-	return (0);
+  int words;
+  char result;
+  char **result;
+  result = (char **)malloc(sizeof(char *));
+  if (result == NULL)
+  
 }
