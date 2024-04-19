@@ -6,20 +6,20 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:43:42 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 01:10:03 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/18 22:12:25 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+static int	ft_isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }
 
-int	ft_islower(int c)
+static int	ft_islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (1);

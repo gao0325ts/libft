@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:16:02 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/17 01:50:45 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/18 03:46:06 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	*ft_memset(void *b, int c, size_t len)
 }
 
 /*
+(tukurinaosou)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
