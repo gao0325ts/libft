@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 02:56:25 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/19 04:26:48 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/20 12:27:04 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 			dst++;
 			i++;
 		}
-		if (dstsize > 0)
-			*dst = '\0';
+		*dst = '\0';
 		return (src_len);
 	}
 }

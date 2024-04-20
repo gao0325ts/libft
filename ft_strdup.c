@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:19:54 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 01:48:54 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/20 16:56:27 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strdup(const char *s1)
 	len = 0;
 	while (s1[len])
 		len++;
-	new_str = NULL;
 	new_str = (char *)malloc(len + 1);
 	if (new_str == NULL)
 		return (NULL);

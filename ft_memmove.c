@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:38:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/19 07:33:23 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/20 16:39:04 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	p_dst = (unsigned char *)dst;
 	p_src = (const unsigned char *)src;
+	
+	if (dst == NULL || src == NULL)
+		return (NULL);
 	if (p_src < p_dst)
 	{
 		p_dst += len - 1;
