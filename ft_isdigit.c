@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:58:54 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 22:19:50 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/27 23:36:46 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-
-int	main(int argc, char *argv[])
-{
-  if (argc != 2 || strlen(argv[1]) != 1)
-  {
-	write(2, "Error\n", 6);
-	return (0);
-  }
-  printf("ascii = %d\n", *argv[1]);
-  printf("result = %d\n", ft_isdigit(*argv[1]));
-  return (0);
-}
-*/

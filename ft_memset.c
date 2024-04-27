@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:16:02 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 03:46:06 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/27 23:43:44 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-/*
-(tukurinaosou)
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-int	main(int argc, char *argv[])
-{
-  const char *str = argv[1];
-
-  if (argc != 4 || strlen(argv[2]) != 1)
-  {
-	write(2, "Error\n", 6);
-	return (0);
-  }
-  printf("string = %s\n", argv[1]);
-  printf("char = %s\n", argv[2]);
-  printf("len = %d\n", atoi(argv[3]));
-  printf("result = %s\n", (unsigned char *)(ft_memset(argv[1], *argv[2],
-			atoi(argv[3]))));
-  return (0);
-}
-*/
