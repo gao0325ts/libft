@@ -6,33 +6,52 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:20:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 01:18:11 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/28 07:51:25 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// LONG_MIN, LONG_MIN - 1, ULONG_MAX + 1, SIZE_MAX + 1, ULONG_MAX - 1, SIZE_MAX - 1
+
+static int ft_isspace(int c)
+{
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	count;
+	int	sign;
 	long long	result;
 
-	count = 0;
+	sign = 1;
 	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
+	while (ft_isspace(*str))
 		str++;
 	while (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
-			count++;
+			sign = -sign;
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
+		if (result * 10 > LONG_MAX - (*str - '0'))
+			return ((int)LONG_MAX);
+		else if (result *)
 		result = result * 10 + (*str - '0');
 		str++;
 	}
-	if (count % 2 == 1)
-		return (-result);
-	return (result);
+	return (sign * result);
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	char *str = "";
+// 	printf("%d\n", ft_atoi());
+// }
+
