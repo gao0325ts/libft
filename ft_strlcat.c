@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 03:30:08 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/27 23:33:18 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/28 18:11:24 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst_len = 0;
 	src_len = ft_strlen(src);
 	n = 0;
-	if (dstsize == 0 || dst == NULL)
+	if (dstsize == 0 && dst == NULL)
 		return src_len;
 	dst_len = ft_strlen(dst);
 	if (dstsize <= dst_len)

@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:05:28 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/18 03:00:19 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/28 17:54:32 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-  size_t s_len;
   char *result;
-  s_len = ft_strlen(&s[start]);
-  result = (char *)malloc(sizeof(char) * len + 1);
+  char *result_start;
+
+  if (start >= ft_strlen(s))
+    return (ft_strdup(""));
+  result = (char *)malloc(sizeof(char) * (len + 1));
   if (result == NULL)
     return (NULL);
-  while (len > 0)
-  {
+  result_start = result;
+  while (len--)
     *result++ = s[start++];
-    len--;
-  }
-  return (result);
+  *result = '\0';
+  return (result_start);
 }
