@@ -6,13 +6,11 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:20:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/28 07:51:25 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/28 17:07:02 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// LONG_MIN, LONG_MIN - 1, ULONG_MAX + 1, SIZE_MAX + 1, ULONG_MAX - 1, SIZE_MAX - 1
 
 static int ft_isspace(int c)
 {
@@ -30,28 +28,41 @@ int	ft_atoi(const char *str)
 	result = 0;
 	while (ft_isspace(*str))
 		str++;
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 			sign = -sign;
 		str++;
 	}
+	if (!(*str >= '0' && *str <= '9'))
+		return (result);
 	while (*str >= '0' && *str <= '9')
 	{
-		if (result * 10 > LONG_MAX - (*str - '0'))
+		if (sign == 1 && result > (LONG_MAX - (*str - '0')) / 10)
 			return ((int)LONG_MAX);
-		else if (result *)
+		else if (sign == -1 && result > (LONG_MAX - (*str - '0')) / 10)
+			return ((int)LONG_MIN);
+		// else if (sign == -1 && result > (-LONG_MIN - (*str - '0')) / 10)
+		// 	return ((int)LONG_MIN);
 		result = result * 10 + (*str - '0');
 		str++;
 	}
 	return (sign * result);
 }
 
+// ?
+// -(result * 10 + (*str - '0')) < LONG_MIN
+// --> result > (-LONG_MIN - (*str - '0')) / 10
+
 // #include <stdio.h>
+// #include <stdlib.h>
 
 // int main(void)
 // {
-// 	char *str = "";
-// 	printf("%d\n", ft_atoi());
+// 	char *str = "--42";
+// 	printf("%d\n", ft_atoi(str));
+// 	char *str2 = "--42";
+// 	printf("%d\n", atoi(str2));
+// 	return 0;
 // }
 
