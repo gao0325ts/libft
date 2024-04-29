@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:34:40 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/19 04:25:07 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/29 13:13:36 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ char	*ft_strdup(const char *s1);
 
 char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *str, char c);
 
 #endif
