@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 03:41:35 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 20:20:28 by stakada          ###   ########.fr       */
+/*   Created: 2024/04/29 19:41:50 by stakada           #+#    #+#             */
+/*   Updated: 2024/04/29 20:17:23 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	if ((char)c == '\0')
-		return ((char *)s);
-	return (NULL);
+  while(*s)
+  {
+    write(fd, s, 1);
+    s++;
+  }
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+//   ft_putstr_fd("test", 1);
+//   printf("%c", '\n');
+//   return 0;
+// }

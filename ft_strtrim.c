@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:43:00 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 12:42:19 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/29 20:17:38 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,9 +125,9 @@ char *ft_strtrim(char const *s1, char const *set)
   return (result);
 }
 
-int main(void)
-{
-  char *r = ft_strtrim("hello world", "world");
-  printf("result = %s\n", r);
-  return 0;
-}
+// int main(void)
+// {
+//   char *r = ft_strtrim("hello world", "world");
+//   printf("result = %s\n", r);
+//   return 0;
+// }
