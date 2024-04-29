@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 13:12:26 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/29 20:50:57 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char	**ft_split(char const *str, char c)
 	size_t		j;
 	size_t		len;
 
+	if (str == NULL)
+		return (NULL);
 	word_count = count_words(str, c);
 	result = (char **)malloc(sizeof(char *) * (word_count + 1));
 	if (!result)

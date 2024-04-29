@@ -6,14 +6,11 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:04:38 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/28 17:26:03 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/29 20:25:45 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// norm
-// static 
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -70,3 +67,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // 74		ASSERT_EQ_PTR(ft_strnstr(str, "test", 10), strnstr(str, "test", 10));
 
 // /* 7 */ check(ft_strnstr(empty, "coucou", -1) == 0); showLeaks();
+
+// Error in test 19: ft_strnstr(0x1043287a0: "abc", "abcdef", 5): Memory problems!
