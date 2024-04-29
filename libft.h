@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:34:40 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 19:52:11 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 05:24:33 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+}	t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

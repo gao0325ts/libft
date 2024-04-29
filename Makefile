@@ -48,6 +48,8 @@ $(NAME): $(OBJS)
 .c.o:
 	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
+bonus:
+
 clean:
 	rm -f $(OBJS)
 

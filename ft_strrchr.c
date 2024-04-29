@@ -14,7 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *p;
+	const char	*p;
+
 	p = NULL;
 	while (*s)
 	{
@@ -32,5 +33,5 @@ char	*ft_strrchr(const char *s, int c)
 // int main(void)
 // {
 // 	printf("%s\n", ft_strrchr("teste", 1024));
-// 	return 0;
+// 	return (0);
 // }

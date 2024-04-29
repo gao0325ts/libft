@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 20:50:57 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/29 21:55:25 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ static size_t	count_words(const char *str, char c)
 
 char	**ft_split(char const *str, char c)
 {
-	size_t		word_count;
+	size_t	word_count;
 	char	**result;
-	size_t		i;
-	size_t		j;
-	size_t		len;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 
 	if (str == NULL)
 		return (NULL);
@@ -62,12 +62,46 @@ char	**ft_split(char const *str, char c)
 			str++;
 		len = word_length(str, c);
 		result[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (!result[i])
+		{
+			while (i > 0)
+				free(result[--i]);
+			free(result);
+			return (NULL);
+		}
 		j = 0;
 		while (j < len)
 			result[i][j++] = *str++;
 		result[i][j] = '\0';
-    i++;
+		i++;
 	}
 	result[word_count] = NULL;
 	return (result);
 }
+
+// #include <libc.h>
+
+// __attribute__((destructor))
+// static void destructor() {
+//     system("leaks -q a.out");
+// }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	char	*str1;
+// 	char	charset1;
+// 	char	**result1;
+
+// 	str1 = "hello!";
+// 	charset1 = ' ';
+// 	result1 = ft_split(str1, charset1);
+// 	printf("Test 1\n");
+// 	for (int i = 0; result1[i] != NULL; i++)
+// 	{
+// 		printf("box %d: %s\n", i, result1[i]);
+// 		free(result1[i]);
+// 	}
+// 	free(result1);
+// }

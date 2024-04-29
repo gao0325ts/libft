@@ -6,71 +6,19 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:43:00 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 20:17:38 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 08:23:10 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// static char	*find_set(const char *str, const char *to_find)
-// {
-// 	const char	*temp_str;
-// 	const char	*temp_to_find;
-
-// 	while (*str && *to_find)
-// 	{
-// 		if (*str == *to_find)
-// 		{
-// 			temp_str = str;
-// 			temp_to_find = to_find;
-// 			while (*temp_to_find && *temp_str == *temp_to_find)
-// 			{
-// 				temp_str++;
-// 				temp_to_find++;
-// 			}
-// 			if (*temp_to_find == '\0')
-// 				return ((char *)str);
-// 		}
-// 		str++;
-// 	}
-// 	return (NULL);
-// }
-
-// static char	*find_set_rev(const char *str, const char *to_find)
-// {
-// 	const char	*temp_str;
-// 	const char	*temp_to_find;
-
-//   temp_str = str + ft_strlen(str) - 1;
-// 	while (*str && *to_find)
-// 	{
-// 		if (*str == *to_find)
-// 		{
-// 			temp_str = str;
-// 			temp_to_find = to_find;
-// 			while (*temp_to_find && *temp_str == *temp_to_find)
-// 			{
-// 				temp_str++;
-// 				temp_to_find++;
-// 			}
-// 			if (*temp_to_find == '\0')
-// 				return ((char *)str);
-// 		}
-// 		str--;
-// 	}
-// 	return (NULL);
-// }
-
-static int	cmp_set(const char *s1, const char *s2, size_t n)
+static int	is_set(const char *str, const char *to_find)
 {
-	while (n--)
+	while (*to_find)
 	{
-		if (*s1 != *s2)
+		if (*str == *to_find)
 			return (1);
-		if (*s1 == '\0' || *s2 == '\0')
-			return (1);
-		s1++;
-		s2++;
+		to_find++;
 	}
 	return (0);
 }
@@ -78,7 +26,7 @@ static int	cmp_set(const char *s1, const char *s2, size_t n)
 static char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t	count;
-	char			*dst_start;
+	char	*dst_start;
 
 	count = 0;
 	dst_start = dst;
@@ -96,38 +44,46 @@ static char	*ft_strncpy(char *dst, const char *src, size_t n)
 	return (dst_start);
 }
 
-#include <stdio.h> // test
-
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-  size_t start;
-  size_t end;
-  char *result;
-  long  length;
+	size_t	start;
+	size_t	end;
+	char	*result;
 
-  if (s1 == NULL || set == NULL || ft_strlen(s1) == 0 || ft_strlen(set) == 0)
-    return (NULL);
-  start = 0;
-  end = ft_strlen(s1) - 1;
-  while (cmp_set(&s1[start], set, ft_strlen(set)) == 0)
-    start++;
-  printf("(start)%s\n", &s1[start]);
-  while (cmp_set(&s1[end], set, ft_strlen(set)) == 0)
-  printf("(end)%s\n", &s1[end]);
-  length = end - start + 1;
-  if (length <= 0)
-    return (NULL);
-  result = (char *)malloc(sizeof(char) * length);
-  if (result == NULL)
-    return (NULL);
-  ft_strncpy(result, s1 + start, length);
-  result[length] = '\0';
-  return (result);
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (is_set(&s1[start], set))
+		start++;
+	if (s1[start] == '\0')
+		return (ft_strdup(""));
+	while (is_set(&s1[end], set))
+		end--;
+	result = (char *)malloc(sizeof(char) * (end - start + 2));
+	if (!result)
+		return (NULL);
+	ft_strncpy(result, s1 + start, end - start + 1);
+	result[end - start + 1] = '\0';
+	return (result);
 }
 
 // int main(void)
 // {
-//   char *r = ft_strtrim("hello world", "world");
-//   printf("result = %s\n", r);
-//   return 0;
+//   printf("(expected)%s\n(result)%s\n", "hello ", ft_strtrim("hello world",
+//		"world"));
+//   printf("(expected)%s\n(result)%s\n", " world", ft_strtrim("hello world",
+//		"hello"));
+//   printf("(expected)%s\n(result)%s\n", "hello world",
+//	ft_strtrim("hello world", ""));
+//   printf("(expected)%s\n(result)%s\n", "", ft_strtrim("", ""));
+//   printf("(expected)%s\n(result)%s\n", "hello world",
+//	ft_strtrim("    hello world     ", " "));
+//   printf("(expected)%s\n(result)%s\n", "hello \n\t\r world",
+//	ft_strtrim(" \n\t\r    hello \n\t\r world     \r\t\n\t \r\n", " \n\t\r"));
+//   printf("(expected)%s\n(result)%s\n", " ", ft_strtrim("hello world",
+//		"abcdefghijklmnopqrstuvwxyz"));
+//   return (0);
 // }

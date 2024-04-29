@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-  if (s == NULL)
-    return;
-  while(*s)
-  {
-    write(fd, s, 1);
-    s++;
-  }
+	if (s == NULL)
+		return ;
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }
 
 // #include <stdio.h>
@@ -29,5 +29,5 @@ void ft_putstr_fd(char *s, int fd)
 // {
 //   ft_putstr_fd("test", 1);
 //   printf("%c", '\n');
-//   return 0;
+//   return (0);
 // }
