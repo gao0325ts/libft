@@ -3,7 +3,7 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS_M =	ft_strlen.c \
+SRCS =	ft_strlen.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
 	ft_strchr.c \
@@ -38,7 +38,7 @@ SRCS_M =	ft_strlen.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-SRCS_B = ft_lstnew.c \
+BONUS = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -48,13 +48,15 @@ SRCS_B = ft_lstnew.c \
 	ft_lstiter.c \
 	ft_lstmap.c
 
-SRCS = $(SRCS_M)
-ifdef WITH_BONUS
-SRCS += $(SRCS_B)
-endif
 
 OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS:.c=.o)
 INCLUDES = ./libft.h
+
+ifdef WITH_BONUS
+SRCS += $(BONUS)
+OBJS += $(BONUS_OBJS)
+endif
 
 all: $(NAME)
 
@@ -65,13 +67,12 @@ $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
 bonus:
-	make WITH_BONUS=1
+	@make WITH_BONUS=1
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BONUS_OBJS)
 
-fclean:
-	make clean
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
