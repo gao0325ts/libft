@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 22:23:11 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 08:17:56 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 21:47:52 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c))
-		return (1);
-	else if (ft_isdigit(c))
-		return (1);
-	return (0);
+	return (ft_isalpha(c));
 }
