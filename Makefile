@@ -44,14 +44,14 @@ SRCS_B = ft_lstnew.c \
 	ft_lstlast.c \
 	ft_lstadd_back.c \
 	ft_lstdelone.c \
-	# ft_lstclear.c \
+	ft_lstclear.c \
 	ft_lstiter.c \
 	ft_lstmap.c
 
-SRCS = $(SRCS_B)
-# ifdef WITH_BONUS
-# SRCS += $(SRCS_B)
-# endif
+SRCS = $(SRCS_M)
+ifdef WITH_BONUS
+SRCS += $(SRCS_B)
+endif
 
 OBJS = $(SRCS:.c=.o)
 INCLUDES = ./libft.h
