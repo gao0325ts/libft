@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:20:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 08:29:07 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 09:08:32 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	ft_atoi(const char *str)
 			sign = -sign;
 		str++;
 	}
-	if (!(*str >= '0' && *str <= '9'))
+	if (!ft_isdigit(*str))
 		return (result);
-	while (*str >= '0' && *str <= '9')
+	while (ft_isdigit(*str))
 	{
 		if (sign == 1 && result > (LONG_MAX - (*str - '0')) / 10)
 			return ((int)LONG_MAX);

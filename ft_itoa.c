@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:14:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 08:20:34 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 09:05:11 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	int		is_negative;
 	int		len;
 
-	isNegative = 0;
+	is_negative = 0;
 	if (n == INT_MIN)
 		return (ft_itoa_int_min(n));
 	if (n < 0)
@@ -76,7 +76,7 @@ char	*ft_itoa(int n)
 		str[len--] = n % 10 + '0';
 		n /= 10;
 	}
-	if (isNegative)
+	if (is_negative)
 		str[0] = '-';
 	return (str);
 }
