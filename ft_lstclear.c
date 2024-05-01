@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:32:15 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 17:39:42 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 05:22:25 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list *next;
 
-	if (!lst || !del)
+	if (lst == NULL || del == NULL)
 		return ;
-	while (*lst)
+	while (*lst != NULL)
 	{
 		next = (*lst)->next;
 		ft_lstdelone(*lst, del);

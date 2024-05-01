@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:58:21 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 10:23:41 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 05:13:49 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *last;
 
-	if (!lst || !new)
+	if (lst == NULL || new == NULL)
 		return ;
-	else if (!*lst)
+	else if (*lst == NULL)
 	{
 		*lst = new;
 		return ;

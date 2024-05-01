@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:43:00 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 08:23:10 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 04:02:35 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	is_set(const char *str, const char *to_find)
 {
-	while (*to_find)
+	while (*to_find != '\0')
 	{
 		if (*str == *to_find)
 			return (1);
@@ -63,7 +63,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (is_set(&s1[end], set))
 		end--;
 	result = (char *)malloc(sizeof(char) * (end - start + 2));
-	if (!result)
+	if (result == NULL)
 		return (NULL);
 	ft_strncpy(result, s1 + start, end - start + 1);
 	result[end - start + 1] = '\0';

@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:13:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 03:50:10 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 04:02:05 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*result;
 	char	*result_start;
 
-	if (!s1 || !s2)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	result = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!result)
+	if (result == NULL)
 		return (NULL);
 	result_start = result;
-	while (*s1)
+	while (*s1 != '\0')
 		*result++ = *s1++;
-	while (*s2)
+	while (*s2 != '\0')
 		*result++ = *s2++;
 	*result = '\0';
 	return (result_start);

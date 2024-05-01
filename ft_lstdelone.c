@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:27:53 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 19:41:13 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 05:14:04 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	if (lst == NULL || del == NULL)
 		return ;
 	del(lst->content);
 	free(lst);

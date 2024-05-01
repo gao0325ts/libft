@@ -6,20 +6,11 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 14:40:50 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 20:51:26 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 04:55:55 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// char to_upper(unsigned int index, char c)
-// {
-//   if (index == 10000)
-//     return ('\0');
-//   if (c >= 'a' && c <= 'z')
-//     return (c - 'a' + 'A');
-//   return (c);
-// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -28,11 +19,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL)
 		return (NULL);
-	i = 0;
 	result = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (!result)
+	if (result == NULL)
 		return (NULL);
-	while (s[i])
+	i = 0;
+	while (s[i] != '\0')
 	{
 		result[i] = f(i, s[i]);
 		i++;

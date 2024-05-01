@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/29 21:55:25 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 04:30:26 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,52 +29,60 @@ static size_t	count_words(const char *str, char c)
 	count = 0;
 	while (*str)
 	{
-		while (*str && *str == c)
+		while (*str != '\0' && *str == c)
 			str++;
 		if (*str)
 		{
 			count++;
-			while (*str && *str != c)
+			while (*str != '\0' && *str != c)
 				str++;
 		}
 	}
 	return (count);
 }
 
+char	**ft_split_support(char **tmp, char const *str, char c,
+		size_t word_count)
+{
+	size_t	i;
+	size_t	j;
+	size_t	len;
+
+	i = 0;
+	while (i < word_count)
+	{
+		while (*str != '\0' && *str == c)
+			str++;
+		len = word_length(str, c);
+		tmp[i] = (char *)malloc(sizeof(char) * (len + 1));
+		if (tmp[i] == NULL)
+		{
+			while (i--)
+				free(tmp[i]);
+			free(tmp);
+			return (NULL);
+		}
+		j = 0;
+		while (j < len)
+			tmp[i][j++] = *str++;
+		tmp[i][j] = '\0';
+		i++;
+	}
+	return (tmp);
+}
+
 char	**ft_split(char const *str, char c)
 {
 	size_t	word_count;
 	char	**result;
-	size_t	i;
-	size_t	j;
-	size_t	len;
 
 	if (str == NULL)
 		return (NULL);
 	word_count = count_words(str, c);
 	result = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (!result)
+	if (result == NULL)
 		return (NULL);
-	i = 0;
-	while (i < word_count)
-	{
-		while (*str && *str == c)
-			str++;
-		len = word_length(str, c);
-		result[i] = (char *)malloc(sizeof(char) * (len + 1));
-		if (!result[i])
-		{
-			while (i > 0)
-				free(result[--i]);
-			free(result);
-			return (NULL);
-		}
-		j = 0;
-		while (j < len)
-			result[i][j++] = *str++;
-		result[i][j] = '\0';
-		i++;
-	}
+	result = ft_split_support(result, str, c, word_count);
 	result[word_count] = NULL;
 	return (result);
 }

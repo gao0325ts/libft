@@ -6,76 +6,59 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:14:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 09:05:11 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 05:18:03 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static char	*ft_itoa_int_min(int n)
-{
-	long	num;
-	int		len;
-	char	*result;
-
-	num = n;
-	num = -num;
-	len = 11;
-	result = (char *)malloc(sizeof(char) * (len + 1));
-	if (!result)
-		return (NULL);
-	result[len] = '\0';
-	while (num != 0)
-	{
-		result[--len] = num % 10 + '0';
-		num /= 10;
-	}
-	result[0] = '-';
-	return (result);
-}
-
-static int	count_len(int n, int is_negative)
+static int	count_len(int num, int is_negative)
 {
 	int	len;
 
 	len = 0;
-	if (n == 0)
-		return (1);
-	else if (is_negative)
+	if (is_negative)
 		len++;
-	while (n != 0)
+	while (num != 0)
 	{
 		len++;
-		n /= 10;
+		num /= 10;
 	}
 	return (len);
 }
 
+char *set_int_to_char(char *str, long long *num, int *len)
+{
+	str[*len] = *num % 10 + '0';
+	*num /= 10;
+	(*len)--;
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
+	long long	num;
 	char	*str;
 	int		is_negative;
 	int		len;
 
 	is_negative = 0;
-	if (n == INT_MIN)
-		return (ft_itoa_int_min(n));
-	if (n < 0)
+	if (n == 0)
+		return (ft_strdup("0"));
+	else if (n < 0)
 	{
 		is_negative = 1;
-		n = -n;
+		num = -n;
 	}
-	len = count_len(n, is_negative);
+	else
+		num = n;
+	len = count_len(num, is_negative);
 	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	if (str == NULL)
 		return (NULL);
 	str[len--] = '\0';
 	while (len >= 0)
-	{
-		str[len--] = n % 10 + '0';
-		n /= 10;
-	}
+		str = set_int_to_char(str, &num, &len);
 	if (is_negative)
 		str[0] = '-';
 	return (str);
