@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:20:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 03:49:02 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 05:23:45 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * result);
 }
-
-// result * 10 + (*str - '0') > LONG_MAX
-// result * 10 + (*str - '0') < LONG_MIN
 
 // #include <stdio.h>
 // #include <stdlib.h>

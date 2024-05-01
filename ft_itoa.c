@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:14:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 05:18:03 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 05:28:19 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ char	*ft_itoa(int n)
 	else if (n < 0)
 	{
 		is_negative = 1;
-		num = -n;
+		num = -(long long)n;
 	}
 	else
-		num = n;
+		num = (long long)n;
 	len = count_len(num, is_negative);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
@@ -63,3 +63,11 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	printf("%s\n", ft_itoa(INT_MIN));
+// 	return (0);
+// }

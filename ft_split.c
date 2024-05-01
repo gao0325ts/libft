@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 04:30:26 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 06:06:10 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	word_length(const char *str, char c)
 	size_t	len;
 
 	len = 0;
-	while (str[len] && str[len] != c)
+	while (str[len] != '\0' && str[len] != c)
 		len++;
 	return (len);
 }
@@ -27,11 +27,11 @@ static size_t	count_words(const char *str, char c)
 	size_t	count;
 
 	count = 0;
-	while (*str)
+	while (*str != '\0')
 	{
 		while (*str != '\0' && *str == c)
 			str++;
-		if (*str)
+		if (*str != '\0')
 		{
 			count++;
 			while (*str != '\0' && *str != c)
@@ -63,7 +63,7 @@ char	**ft_split_support(char **tmp, char const *str, char c,
 			return (NULL);
 		}
 		j = 0;
-		while (j < len)
+		while (j < len && *str != '\0')
 			tmp[i][j++] = *str++;
 		tmp[i][j] = '\0';
 		i++;
@@ -98,13 +98,8 @@ char	**ft_split(char const *str, char c)
 
 // int	main(void)
 // {
-// 	char	*str1;
-// 	char	charset1;
 // 	char	**result1;
-
-// 	str1 = "hello!";
-// 	charset1 = ' ';
-// 	result1 = ft_split(str1, charset1);
+// 	result1 = ft_split("hello!", ' ');
 // 	printf("Test 1\n");
 // 	for (int i = 0; result1[i] != NULL; i++)
 // 	{
