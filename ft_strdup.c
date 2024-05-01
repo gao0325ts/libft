@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:19:54 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/20 16:56:27 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 03:38:44 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 char	*ft_strdup(const char *s1)
 {
-	size_t	len;
 	char	*start;
 	char	*new_str;
 
-	len = 0;
-	while (s1[len])
-		len++;
-	new_str = (char *)malloc(len + 1);
-	if (new_str == NULL)
+	new_str = (char *)malloc(ft_strlen(s1) + 1);
+	if (!new_str)
 		return (NULL);
 	start = new_str;
 	while (*s1)
@@ -30,3 +26,12 @@ char	*ft_strdup(const char *s1)
 	*new_str = '\0';
 	return (start);
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	char *str = "";
+// 	printf("%s\n", ft_strdup(str));
+// 	return (0);
+// }
