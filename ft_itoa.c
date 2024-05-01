@@ -27,7 +27,7 @@ static int	count_len(int num, int is_negative)
 	return (len);
 }
 
-char *set_int_to_char(char *str, long long *num, int *len)
+char	*set_int_to_char(char *str, long long *num, int *len)
 {
 	str[*len] = *num % 10 + '0';
 	*num /= 10;
@@ -38,9 +38,9 @@ char *set_int_to_char(char *str, long long *num, int *len)
 char	*ft_itoa(int n)
 {
 	long long	num;
-	char	*str;
-	int		is_negative;
-	int		len;
+	char		*str;
+	int			is_negative;
+	int			len;
 
 	is_negative = 0;
 	if (n == 0)

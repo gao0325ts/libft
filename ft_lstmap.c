@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:52:06 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 05:21:34 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 06:14:47 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (tmp == NULL)
 		{
 			ft_lstclear(&start, del);
-			// del(result->content);
-			// free(lst);
 			return (NULL);
 		}
 		result->next = tmp;

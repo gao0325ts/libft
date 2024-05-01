@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 06:06:10 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 06:07:54 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	**ft_split_support(char **tmp, char const *str, char c,
 			return (NULL);
 		}
 		j = 0;
-		while (j < len && *str != '\0')
+		while (j < len)
 			tmp[i][j++] = *str++;
 		tmp[i][j] = '\0';
 		i++;
