@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:04:38 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 08:22:12 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 23:58:38 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t		i;
 	size_t		j;
-	const char	*tmp_haystack;
-	const char	*tmp_needle;
 
 	i = 0;
 	if (*needle == '\0')
@@ -28,17 +26,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	{
 		if (*haystack == *needle)
 		{
-			j = i;
-			tmp_haystack = haystack;
-			tmp_needle = needle;
-			while (j < len && *tmp_haystack != '\0' && *tmp_needle != '\0'
-				&& *tmp_haystack == *tmp_needle)
-			{
-				tmp_haystack++;
-				tmp_needle++;
+			j = 0;
+			while (i + j < len && haystack[j] && needle[j] && haystack[j] == needle[j])
 				j++;
-			}
-			if (*tmp_needle == '\0')
+			if (needle[j] == '\0')
 				return ((char *)haystack);
 		}
 		haystack++;

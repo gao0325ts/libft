@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:20:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 09:08:32 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 23:59:17 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,11 @@ int	ft_atoi(const char *str)
 			sign = -sign;
 		str++;
 	}
-	if (!ft_isdigit(*str))
-		return (result);
-	while (ft_isdigit(*str))
+	while (*str >= '0' && *str <= '9')
 	{
 		if (sign == 1 && result > (LONG_MAX - (*str - '0')) / 10)
 			return ((int)LONG_MAX);
-		else if (sign == -1 && result > (LONG_MAX - (*str - '0')) / 10)
+		else if (sign == -1 && -result < (LONG_MIN + (*str - '0')) / 10)
 			return ((int)LONG_MIN);
 		result = result * 10 + (*str - '0');
 		str++;
@@ -50,7 +48,7 @@ int	ft_atoi(const char *str)
 
 // ?
 // -(result * 10 + (*str - '0')) < LONG_MIN
-// --> result > (-LONG_MIN - (*str - '0')) / 10
+// --> -result > (LONG_MIN + (*str - '0')) / 10
 
 // #include <stdio.h>
 // #include <stdlib.h>

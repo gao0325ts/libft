@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:16:02 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/28 17:24:57 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 21:51:27 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	p = (unsigned char *)b;
 	while (len--)
-	{
-		*p = (unsigned char)c;
-		p++;
-	}
+		*p++ = (unsigned char)c;
 	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:08:16 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/28 17:10:40 by stakada          ###   ########.fr       */
+/*   Updated: 2024/04/30 23:24:42 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (count > 0 && SIZE_MAX / count < size)
 		return (NULL);
 	tmp = malloc(count * size);
-	if (tmp == NULL)
+	if (!tmp)
 		return (NULL);
 	ft_bzero(tmp, count * size);
 	return (tmp);
