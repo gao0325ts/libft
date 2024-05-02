@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:23:35 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 21:54:05 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/02 07:53:57 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-		((char *)s)[i++] = '\0';
+	while (n--)
+		*(char *)s++ = '\0';
 }
