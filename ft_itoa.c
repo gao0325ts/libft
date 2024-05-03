@@ -6,13 +6,13 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:14:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 05:28:19 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 22:06:28 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_len(int num, int is_negative)
+static	int	count_len(int num, int is_negative)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ static int	count_len(int num, int is_negative)
 	return (len);
 }
 
-char	*set_int_to_char(char *str, long long *num, int *len)
+static	char	*set_int_to_char(char *str, long long *num, int *len)
 {
 	str[*len] = *num % 10 + '0';
 	*num /= 10;

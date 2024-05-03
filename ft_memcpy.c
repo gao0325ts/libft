@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:27:59 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 08:20:44 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:02:39 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*start;
+	void	*start;
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	start = (char *)dst;
+	start = dst;
 	while (n--)
-		*(char *)dst++ = *(char *)src++;
+		*(unsigned char *)dst++ = *(unsigned char *)src++;
 	return (start);
 }
 

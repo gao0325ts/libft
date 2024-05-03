@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:38:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 07:35:52 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:11:04 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*tmp_dst;
-	const char	*tmp_src;
+	void	*start;
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	tmp_dst = (char *)dst;
-	tmp_src = (const char *)src;
-	if (tmp_src < tmp_dst)
+	start = dst;
+	if (dst < src)
 	{
-		tmp_dst += len - 1;
-		tmp_src += len - 1;
 		while (len--)
-			*tmp_dst-- = *tmp_src--;
+			*(unsigned char *)dst++ = *(const unsigned char *)src++;
 	}
 	else
 	{
+		dst += len - 1;
+		src += len - 1;
 		while (len--)
-			*tmp_dst++ = *tmp_src++;
+			*(unsigned char *)dst-- = *(const unsigned char *)src--;
 	}
-	return (dst);
+	return (start);
 }

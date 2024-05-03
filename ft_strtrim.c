@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 19:43:00 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 04:02:35 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 22:03:05 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,6 @@ static int	is_set(const char *str, const char *to_find)
 		to_find++;
 	}
 	return (0);
-}
-
-static char	*ft_strncpy(char *dst, const char *src, size_t n)
-{
-	size_t	count;
-	char	*dst_start;
-
-	count = 0;
-	dst_start = dst;
-	while (count < n && *src != '\0')
-	{
-		*dst++ = *src++;
-		count++;
-	}
-	while (count < n)
-	{
-		*dst = '\0';
-		dst++;
-		count++;
-	}
-	return (dst_start);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -65,7 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (result == NULL)
 		return (NULL);
-	ft_strncpy(result, s1 + start, end - start + 1);
+	ft_strlcpy(result, s1 + start, end - start + 2);
 	result[end - start + 1] = '\0';
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 09:05:49 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 12:11:36 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static size_t	count_words(const char *str, char c)
 	return (count);
 }
 
-char	**ft_split_support(char **tmp, char const *str, char c,
+static	char	**ft_split_support(char **tmp, char const *str, char c,
 		size_t word_count)
 {
 	size_t	i;

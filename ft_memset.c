@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:16:02 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 08:48:44 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 17:55:52 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	void *start;
+	void	*start;
 
 	start = b;
 	while (len--)
