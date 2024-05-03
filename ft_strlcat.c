@@ -42,5 +42,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 // 	char src[15] = "copy-this-text";
 // 	// printf("%zu\n", ft_strlcat(dst, NULL, 0));
 // 	printf("%zu\n", strlcat(dst, src, 3));
-// 	return 0;
+// 	return (0);
 // }

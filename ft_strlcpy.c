@@ -37,5 +37,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 // 	// char dst[100];
 // 	// char src[] = "copy-this-text";
 // 	printf("%zu\n", ft_strlcpy(NULL, NULL, 5));
-// 	return 0;
+// 	return (0);
 // }

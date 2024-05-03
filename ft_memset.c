@@ -28,5 +28,5 @@ void	*ft_memset(void *b, int c, size_t len)
 // {
 // 	char str[] = "ABCDE";
 // 	printf("%s\n", ft_memset((void *)str, 'A', 3));
-// 	return 0;
+// 	return (0);
 // }

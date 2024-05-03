@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	int	count_len(int num, int is_negative)
+static int	count_len(int num, int is_negative)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ static	int	count_len(int num, int is_negative)
 	return (len);
 }
 
-static	char	*set_int_to_char(char *str, long long *num, int *len)
+static char	*set_int_to_char(char *str, long long *num, int *len)
 {
 	str[*len] = *num % 10 + '0';
 	*num /= 10;

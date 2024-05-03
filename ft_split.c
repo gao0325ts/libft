@@ -41,7 +41,7 @@ static size_t	count_words(const char *str, char c)
 	return (count);
 }
 
-static	char	**ft_split_support(char **tmp, char const *str, char c,
+static char	**ft_split_support(char **tmp, char const *str, char c,
 		size_t word_count)
 {
 	size_t	i;
