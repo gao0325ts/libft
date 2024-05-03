@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 02:24:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 06:07:54 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/03 09:05:49 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char	**ft_split(char const *str, char c)
 	if (result == NULL)
 		return (NULL);
 	result = ft_split_support(result, str, c, word_count);
+	if (result == NULL)
+		return (NULL);
 	result[word_count] = NULL;
 	return (result);
 }
