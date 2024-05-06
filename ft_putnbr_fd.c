@@ -17,6 +17,11 @@ void	ft_putnbr_fd(int n, int fd)
 	long	nbr;
 
 	nbr = n;
+	if (nbr == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (nbr < 0)
 	{
 		write(fd, "-", 1);
