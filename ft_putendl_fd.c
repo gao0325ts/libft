@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:46:48 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 05:24:27 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:30:49 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s == NULL)
+	if (!s)
 		return ;
-	while (*s != '\0')
+	while (*s)
 	{
 		write(fd, s, 1);
 		s++;
