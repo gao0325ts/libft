@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 13:14:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 22:06:28 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:15:27 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 	int			len;
 
 	is_negative = 0;
-	if (n == 0)
+	if (!n)
 		return (ft_strdup("0"));
 	else if (n < 0)
 	{
@@ -54,7 +54,7 @@ char	*ft_itoa(int n)
 		num = (long long)n;
 	len = count_len(num, is_negative);
 	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	str[len--] = '\0';
 	while (len >= 0)
