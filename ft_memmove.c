@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 04:38:37 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 18:11:04 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:30:05 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	void	*start;
 
-	if (dst == NULL && src == NULL)
+	if (!dst && !src)
 		return (NULL);
 	start = dst;
 	if (dst < src)
