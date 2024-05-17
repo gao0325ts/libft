@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 23:27:59 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 18:02:39 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:29:30 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	void	*start;
 
-	if (dst == NULL && src == NULL)
+	if (!dst && !src)
 		return (NULL);
 	start = dst;
 	while (n--)
