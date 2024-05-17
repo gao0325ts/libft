@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 03:44:44 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 21:21:19 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:43:19 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*p;
 
 	p = NULL;
-	while (*s != '\0')
+	while (*s)
 	{
 		if (*s == (char)c)
 			p = (char *)s;
