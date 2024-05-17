@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 02:56:25 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/03 20:38:07 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:38:43 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	src_len = ft_strlen(src);
-	if (dstsize == 0)
+	if (!dstsize)
 		return (src_len);
 	else
 	{
-		while (i++ < (dstsize - 1) && *src != '\0')
+		while (i++ < (dstsize - 1) && *src)
 			*dst++ = *src++;
 		*dst = '\0';
 		return (src_len);
