@@ -53,10 +53,10 @@ OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
 INCLUDES = ./libft.h
 
-ifdef WITH_BONUS
+# ifdef WITH_BONUS
 SRCS += $(BONUS)
 OBJS += $(BONUS_OBJS)
-endif
+# endif
 
 all: $(NAME)
 
