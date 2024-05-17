@@ -6,7 +6,7 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:42:51 by stakada           #+#    #+#             */
-/*   Updated: 2024/05/02 06:14:25 by stakada          ###   ########.fr       */
+/*   Updated: 2024/05/17 10:21:14 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (lst == NULL || f == NULL)
+	if (!lst || !f)
 		return ;
-	while (lst != NULL)
+	while (lst)
 	{
 		f(lst->content);
 		lst = lst->next;
