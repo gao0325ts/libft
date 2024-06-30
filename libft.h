@@ -6,13 +6,14 @@
 /*   By: stakada <stakada@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:34:40 by stakada           #+#    #+#             */
-/*   Updated: 2024/04/30 19:41:36 by stakada          ###   ########.fr       */
+/*   Updated: 2024/07/01 06:34:43 by stakada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdint.h>
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>

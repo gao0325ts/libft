@@ -51,7 +51,6 @@ BONUS = ft_lstnew.c \
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS:.c=.o)
-INCLUDES = ./libft.h
 
 ifdef WITH_BONUS
 SRCS += $(BONUS)
@@ -64,7 +63,7 @@ $(NAME): $(OBJS)
 	ar rcs $@ $^
 
 .c.o:
-	$(CC) $(CFLAGS) -I $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 bonus:
 	@make WITH_BONUS=1
